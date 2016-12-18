@@ -244,8 +244,11 @@ module.exports = function(grunt) {
         eqnull: true,
         browser: true,
         evil: false,
+        loopfunc: true,
+        shadow: true,
         globals: {
-            jQuery: true
+            jQuery: true,
+            console: true
         },  
       },
       js: [   'Gruntfile.js', 

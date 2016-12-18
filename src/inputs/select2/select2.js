@@ -124,7 +124,7 @@ $(function(){
 
                     results.results = this.convertSource(results.results);
 
-                    console.log('processResults', data, results)
+                    console.log('processResults', data, results);
 
                     return results;
                 }, this);
@@ -166,7 +166,7 @@ $(function(){
             if (!this.$input.data('select2')) {
                 this.$input.select2(this.options.select2);
             }
-            console.log(this.$input.html())
+            console.log(this.$input.html());
 
             if (this.options.initFunction) {
                 this.options.initFunction(this.$input, $.proxy(function (initial) {
@@ -193,7 +193,7 @@ $(function(){
         },
 
         renderList: function() {
-            console.log('renderList', arguments)
+            console.log('renderList', arguments);
             var $options = this.$input.children();
             Constructor.superclass.renderList.apply(this, arguments);
             this.$input.prepend($options);
@@ -248,7 +248,7 @@ $(function(){
         * Used to update the text in the link based on the selected value
         */
        value2html: function (value, element) {
-           console.log('value2html', arguments)
+           console.log('value2html', arguments);
            Constructor.superclass.value2html.apply(this, arguments);
        },
 
@@ -297,7 +297,7 @@ $(function(){
         * Used to set the value of Select2 based on the current x-editable selections.
         */
        value2input: function (value) {
-           console.log('value2input', value)
+           console.log('value2input', value);
 
            // The value for a multiple select can be passed in as a single string
            // This will convert it from a string to an array of data values
@@ -319,7 +319,7 @@ $(function(){
 
                for (var v = 0; v < value.length; v++) {
                    var $filtered = $options.filter(function (i, elem) {
-                       return elem.value == value[v].toString();
+                       return elem.value === value[v].toString();
                    });
 
                    // Check if the option doesn't already exist
@@ -330,7 +330,7 @@ $(function(){
                }
            } else {
                var $filtered = this.$input.find('option').filter(function (i, elem) {
-                   return elem.value == value.toString()
+                   return elem.value === value.toString();
                });
 
                if ($filtered.length === 0) {
